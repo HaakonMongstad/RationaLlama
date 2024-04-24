@@ -1,5 +1,7 @@
 # read in 'name' and 'steps' columns from RAW_recipes.csv into a pd.DataFrame.
 
+import sys
+
 import pandas as pd
 
 
@@ -23,10 +25,19 @@ def preprocess(file_path):
 
 
 if __name__ == "__main__":
-    print("preprocessing data...")
-    data = preprocess("data/RAW_recipes.csv")
+    # use command line prompt to run this script given source and output file paths
 
-    print("saving data to data/processed_data.csv")
-    data.to_csv("data/processed_data.csv", index=False)
+    if len(sys.argv) != 3:
+        print("Usage: python data_preprocess.py <source_file_path> <output_file_path>")
+        sys.exit(1)
+
+    source_file_path = sys.argv[1]
+    output_file_path = sys.argv[2]
+
+    print("preprocessing data...")
+    data = preprocess(source_file_path)
+
+    print(f"saving data to {output_file_path}")
+    data.to_csv(output_file_path, index=False)
 
     print("done!")
