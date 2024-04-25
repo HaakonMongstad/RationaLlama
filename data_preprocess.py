@@ -1,3 +1,4 @@
+import os
 import sys
 
 import pandas as pd
@@ -48,6 +49,11 @@ if __name__ == "__main__":
 
     source_file_path = sys.argv[1]
     output_file_path = sys.argv[2]
+
+    # creates output dir if non existent
+    output_dir = os.path.dirname(output_file_path)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
     print("preprocessing data...")
     data = preprocess(source_file_path)

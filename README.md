@@ -20,3 +20,10 @@ cmake -DCOMPUTE_BACKEND=cuda -S .
 make
 pip install .
 ```
+
+4. Downloading dataset and preprocessing
+## PUT KAGGLE DATASET DOWNLOAD HERE
+
+```bash
+python data_preprocess.py <source_file_path> <output_file_path>
+```
