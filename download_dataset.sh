@@ -2,8 +2,6 @@
 mkdir temp
 cd temp || exit
 
-# 
-
 echo Downloading the dataset...
 
 # Download the recipes dataset from kaggle
