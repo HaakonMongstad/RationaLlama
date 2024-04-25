@@ -2,6 +2,7 @@ import os
 import sys
 
 import pandas as pd
+from sklearn.model_selection import train_test_split
 
 
 def read_data(file_path):
@@ -44,21 +45,24 @@ def preprocess(file_path):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python data_preprocess.py <source_file_path> <output_file_path>")
+        print("Usage: python data_preprocess.py <source_file_path> <output_dir_path>")
         sys.exit(1)
 
     source_file_path = sys.argv[1]
-    output_file_path = sys.argv[2]
+    output_dir_path = sys.argv[2]
 
     # creates output dir if non existent
-    output_dir = os.path.dirname(output_file_path)
-    if not os.path.exists(output_dir):
-        os.makedirs(output_dir)
+    if not os.path.exists(output_dir_path):
+        os.makedirs(output_dir_path)
 
     print("preprocessing data...")
     data = preprocess(source_file_path)
 
-    print(f"saving data to {output_file_path}")
-    data.to_csv(output_file_path, index=False)
+    # split dataset to train and test
+    train, test = train_test_split(data, test_size=0.2, random_state=42)
+
+    print(f"saving training and testing data to {output_dir_path}")
+    train.to_csv(os.path.join(output_dir_path, "recipes_train.csv"), index=False)
+    test.to_csv(os.path.join(output_dir_path, "recipes_test.csv"), index=False)
 
     print("done!")
