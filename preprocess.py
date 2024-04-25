@@ -45,7 +45,7 @@ def preprocess(file_path):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: python data_preprocess.py <source_file_path> <output_dir_path>")
+        print("Usage: python preprocess.py <source_file> <output_directory>")
         sys.exit(1)
 
     source_file_path = sys.argv[1]
@@ -55,14 +55,11 @@ if __name__ == "__main__":
     if not os.path.exists(output_dir_path):
         os.makedirs(output_dir_path)
 
-    print("preprocessing data...")
     data = preprocess(source_file_path)
 
     # split dataset to train and test
     train, test = train_test_split(data, test_size=0.2, random_state=42)
 
-    print(f"saving training and testing data to {output_dir_path}")
-    train.to_csv(os.path.join(output_dir_path, "recipes_train.csv"), index=False)
-    test.to_csv(os.path.join(output_dir_path, "recipes_test.csv"), index=False)
-
-    print("done!")
+    print(f"Saving training and testing data to {output_dir_path}")
+    train.to_csv(os.path.join(output_dir_path, "train.csv"), index=False)
+    test.to_csv(os.path.join(output_dir_path, "test.csv"), index=False)
