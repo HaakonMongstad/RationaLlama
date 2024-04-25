@@ -1,6 +1,6 @@
 # dsl-final-project
 
-# GPU Installation
+## GPU Installation
 
 1. Create a conda environment and install the required dependencies:
 ```bash
@@ -21,9 +21,18 @@ make
 pip install .
 ```
 
-4. Downloading dataset and preprocessing
-## PUT KAGGLE DATASET DOWNLOAD HERE
+## Dataset Download
 
+1. Download your kaggle API token from: https://www.kaggle.com/settings/account
+
+2. Move kaggle.json to ```~/.kaggle/kaggle.json```
+
+3. Change the file permissions for security:
 ```bash
-python data_preprocess.py <source_file_path> <output_file_path>
+chmod 600 ~/.kaggle/kaggle.json
+``` 
+
+4. Run the downloader script
+```bash
+bash download_dataset.sh
 ```

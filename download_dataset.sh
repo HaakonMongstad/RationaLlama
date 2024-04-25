@@ -20,3 +20,5 @@ python preprocess.py ./temp/RAW_recipes.csv ./data/
 
 # Remove the temporary folder
 rm -r temp
+
+echo Finished preprocessing.
