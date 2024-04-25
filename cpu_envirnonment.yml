@@ -6,7 +6,6 @@ dependencies:
   - python==3.10
   - pip
   - pytorch
-  - bitsandbytes
   - peft
   - numpy
   - pandas
