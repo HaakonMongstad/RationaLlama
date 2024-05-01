@@ -4,12 +4,12 @@
 
 1. Create a conda environment and install the required dependencies:
 ```bash
-conda env create -f gpu_environment.yaml
+conda env create -f environment.yaml
 ```
 
 2. Activate the environment:
 ```bash
-conda activate dsl-final-project
+conda activate rationallama
 ```
 
 3. Install bitsandbytes package from source to enable quantization:
