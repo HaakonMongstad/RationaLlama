@@ -1,5 +1,5 @@
 # RationaLlama 
-<img src="RationaLlama.png" alt="Image Description" width="250" />
+<img src="img/RationaLlama.png" alt="Image Description" width="250" />
 
 
 RationaLlama is a Llama 2 model fine-tuned to solve logical reasoning tasks on the LogiQA dataset.
