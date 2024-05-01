@@ -1,6 +1,13 @@
-# dsl-final-project
+# RationaLlama 
+<img src="RationaLlama.png" alt="Image Description" width="250" />
 
-## GPU Installation
+
+RationaLlama is a Llama 2 model fine-tuned to solve logical reasoning tasks on the LogiQA dataset.
+
+Medium Article: [RationaLlama: Fine-tuning an LLM for Logical Reasoning, and Why it's Hard. . .](https://medium.com/p/c590ff4081fc/edit)
+
+
+## Env Installation
 
 1. Create a conda environment and install the required dependencies:
 ```bash
@@ -20,19 +27,17 @@ cmake -DCOMPUTE_BACKEND=cuda -S .
 make
 pip install .
 ```
-
-## Dataset Download
-
-1. Download your kaggle API token from: https://www.kaggle.com/settings/account
-
-2. Move kaggle.json to ```~/.kaggle/kaggle.json```
-
-3. Change the file permissions for security:
-```bash
-chmod 600 ~/.kaggle/kaggle.json
-``` 
-
-4. Run the downloader script
-```bash
-bash download_dataset.sh
+## 🤗Hugging Face CLI
+Log in to Hugging Face from the terminal:
 ```
+huggingface-cli login
+```
+
+## Dataset Used for RationaLlama 
+The data sets used in the article can be found here:
+
+Training Dataset: [LogiQA](https://github.com/lgw863/LogiQA-dataset)
+
+Baseline Datasets: 
+[ReClor](https://arxiv.org/abs/2002.04326),
+[LogiQA 2.0](https://github.com/csitfun/LogiQA2.0)
