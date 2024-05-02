@@ -104,6 +104,7 @@ def main() -> None:
         outputs = tokenizer.decode(
             output[0][input_ids.shape[-1] :], skip_special_tokens=True
         )
+
         predicted_answer = outputs[0]
 
         # Skip if the predicted answer is not a valid answer

@@ -1,8 +1,9 @@
 # This code is used to call openAI's API to benchmark datasets
 
 import os
-from openai import OpenAI
+
 import pandas as pd
+from openai import OpenAI
 from tqdm.auto import tqdm
 
 # Initialize the client
